@@ -45,7 +45,8 @@ jobs:
           DATABASE_URL: sqlite:///%kernel.project_dir%/data/database.sqlite
         run: php bin/phpunit --coverage-text
   build:
-    - name: build Symfony
+    name: build Symfony
+    runs-on: ${{ matrix.operating-system }}
     needs: test
     if: ${{ success() }}
 
