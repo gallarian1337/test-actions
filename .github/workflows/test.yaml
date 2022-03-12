@@ -50,8 +50,7 @@ jobs:
     if: ${{ success() }}
     steps:
       - uses: actions/checkout@v2
+      if: ${{ success() }}
       - run: echo 'ok'
-    if: ${{ failure() }}
-    steps:
-      - uses: actions/checkout@v2
+      if: ${{ failure() }}
       - run: echo 'fail'
