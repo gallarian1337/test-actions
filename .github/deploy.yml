@@ -1,0 +1,21 @@
+name: Project Deployement
+
+on:
+  push:
+    branches: [master]
+deploy:
+  runs-on: ubuntu-latest
+  steps:
+   - name: Download artifact
+     uses: actions/download-artifact@master
+     with:
+	     name: bundle
+       path: ./dist
+    - name: Deploy project with SSH
+     uses: easingthemes/ssh-deploy@v2.1.4
+     env:
+	     SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+       REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+       REMOTE_USER: ${{ secrets.REMOTE_USER }}
+       SOURCE: "dist"
+       TARGET: "~/"
