@@ -1,8 +1,6 @@
 name: Project Deployement
 
-on:
-  push:
-    branches: [master]
+on: [push]
 deploy:
   runs-on: ubuntu-latest
   steps:
