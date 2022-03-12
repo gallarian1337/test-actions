@@ -44,9 +44,3 @@ jobs:
         env:
           DATABASE_URL: sqlite:///%kernel.project_dir%/data/database.sqlite
         run: php bin/phpunit --coverage-text
-  build:
-    - name: build Symfony
-      steps:
-        - name: Get composer cache directory
-          id: composer-cache
-          run: echo "::set-output name=dir::$(composer config cache-files-dir)"
