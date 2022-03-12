@@ -49,8 +49,9 @@ jobs:
     runs-on: ubuntu-latest
     #if: ${{ success() }}
     steps:
-      - uses: actions/checkout@v2
       if: ${{ success() }}
-        - run: echo 'ok'
+      - uses: actions/checkout@v2
+      - run: echo 'ok'
       if: ${{ failure() }}
-        - run: echo 'fail'
+      - uses: actions/checkout@v2
+      - run: echo 'fail'
