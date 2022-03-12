@@ -12,4 +12,5 @@ jobs:
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          SOURCE: "https://github.com/gallarian1337/test-actions.git"
           TARGET: "~/"
