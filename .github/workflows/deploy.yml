@@ -14,4 +14,4 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: "~/"
     if: ${{ success() }}
-    echo 'ok'
+    step: echo 'ok'
