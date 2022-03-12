@@ -13,6 +13,5 @@ jobs:
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: "~/"
-    if: ${{ success() }}
-      steps: 
-        - run: echo 'ok'
+    if: ${{ success() }} 
+    - run: echo 'ok'
