@@ -51,3 +51,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: echo 'ok'
+    if: ${{ failure() }}
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo 'fail'
