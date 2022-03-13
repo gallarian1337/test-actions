@@ -5,9 +5,11 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+      - run: echo '${{ github.workspace }}'
       - name: Deploy project with SSH
         uses: easingthemes/ssh-deploy@v2.1.4
-        run: echo '${{ github.workspace }}'
+      #- run: echo '${{ github.workspace }}'
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
