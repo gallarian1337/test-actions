@@ -5,15 +5,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: echo '${{ github.workspace }}'
       - name: Deploy project with SSH
         uses: easingthemes/ssh-deploy@v2.1.4
-      #- run: echo '${{ github.workspace }}'
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          SOURCE: "test-actions/"
+          SOURCE: https://github.com/gallarian1337/test-actions.git
           TARGET: "~/test-sf/"
