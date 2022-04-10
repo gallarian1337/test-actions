@@ -56,3 +56,5 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           SOURCE: "/"
           TARGET: "~/test-sf/"
+      - name: create directory
+        run: mdkir test-directory
