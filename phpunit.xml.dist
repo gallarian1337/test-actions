@@ -27,7 +27,9 @@
         <include>
             <directory suffix=".php">src</directory>
         </include>
-        
+        <exclude>
+            <directory>src/DataFixtures</directory>
+        </exclude>
         <report>
             <html outputDirectory="coverage/html-coverage" lowUpperBound="40" highLowerBound="70"/>
             <php outputFile="coverage/coverage.php"/>
