@@ -35,7 +35,7 @@ jobs:
           composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader
       - name: modification .env
         run: |
-          - sed "APP_ENV=prod" .env
+          sed "APP_ENV=prod" .env
       - name: Download project as artifact
         uses: actions/upload-artifact@master
         with:
